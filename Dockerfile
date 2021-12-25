@@ -17,4 +17,6 @@ ENV LOG_CHANNEL stderr
 # Allow composer to run as root
 ENV COMPOSER_ALLOW_SUPERUSER 1
 
+COPY --from=composer:2.0 /usr/bin/composer /usr/bin/composer
+
 CMD ["/start.sh"]
